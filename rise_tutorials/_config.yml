@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : RISE_Tutorials  # The title of the book. Will be placed in the left navbar.
-author                      : Rachid ZEGHLACHE  # The author of the book
+author                      : RISE  # The author of the book
 copyright                   : "2025"  # Copyright year to be placed in the footer
 logo                        : logo-rise.png  # A path to the book logo
 
