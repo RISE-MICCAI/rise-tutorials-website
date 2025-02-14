@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Beginner stage 🔰
+    chapters:
+    - file: python_tuto
+    - file: git_tutorial
+      sections:
+      - file: markdown-notebooks
+  - caption : Intermidiate stage 🔰🔰
+    chapters:
+    - file: markdown
+    - file: notebooks
