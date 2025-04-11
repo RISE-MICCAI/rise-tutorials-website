@@ -5,14 +5,15 @@ format: jb-book
 root: intro
 parts:
   - caption: Beginner stage 🔰
-    # chapters:
-    # - file: python_tuto
+    chapters:
+    - file: Beginner_tuto/intro.md
     # - file: git_tutorial
       # sections:
       # - file: markdown-notebooks
   - caption : Intermidiate stage 🔰🔰
-    # chapters:
-    # - file: markdown
+    chapters:
+    - file: Intermidiate_tuto/intro.md
     # - file: notebooks
   - caption : Advance stage 🔰🔰🔰
-    # chapters:
+    chapters:
+    - file: Advances_tuto/intro.md
