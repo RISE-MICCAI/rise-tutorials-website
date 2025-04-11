@@ -6,11 +6,13 @@ root: intro
 parts:
   - caption: Beginner stage 🔰
     chapters:
-    - file: python_tuto
-    - file: git_tutorial
-      sections:
-      - file: markdown-notebooks
+    # - file: python_tuto
+    # - file: git_tutorial
+      # sections:
+      # - file: markdown-notebooks
   - caption : Intermidiate stage 🔰🔰
     chapters:
-    - file: markdown
-    - file: notebooks
+    # - file: markdown
+    # - file: notebooks
+  - caption : Advance stage 🔰🔰🔰
+    chapters:
