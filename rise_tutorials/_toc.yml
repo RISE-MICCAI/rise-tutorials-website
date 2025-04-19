@@ -7,6 +7,7 @@ parts:
   - caption: Beginner stage 🔰
     chapters:
     - file: Beginner_tuto/intro.md
+    - file: Beginner_tuto/tutorial-rise-classification.ipynb
     # - file: git_tutorial
       # sections:
       # - file: markdown-notebooks
