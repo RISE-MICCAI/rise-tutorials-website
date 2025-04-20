@@ -1,56 +1,70 @@
-# Contributing
+# 🤝 Contributing to RISE Tutorials
 
-Contributions are welcome, and they are greatly appreciated! Every little bit
-helps, and credit will always be given. You can contribute in the ways listed below.
+We welcome all contributions — from minor typo fixes to brand-new tutorials. Your involvement helps make this a more valuable and inclusive educational resource for the entire medical imaging community.
 
-## Report Bugs
+## 🚀 Ways to Contribute
 
-Report bugs using GitHub issues.
+### 🐞 Report Bugs
 
-If you are reporting a bug, please include:
+Found something odd or broken? Please let us know by [opening an issue](https://github.com/YouvenZ/rise_tutorials/issues).
 
-* Your operating system name and version.
-* Any details about your local setup that might be helpful in troubleshooting.
-* Detailed steps to reproduce the bug.
+When reporting a bug, include:
+- Your operating system and Python version
+- A brief description of the issue
+- Clear steps to reproduce the problem (screenshots welcome!)
 
-## Fix Bugs
+### 🛠️ Fix Bugs
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+Check out our [open issues](https://github.com/YouvenZ/rise_tutorials/issues). Look for those tagged with:
+- `bug`
+- `help wanted`
 
-## Implement Features
+If something looks doable — go for it! We’re here to help if you get stuck.
 
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
+### ✨ Implement Features
 
-## Write Documentation
+Have an idea to improve a tutorial or add a new one? Issues tagged with `enhancement` and `help wanted` are a great place to start. Or propose your own feature via a GitHub issue.
 
-RISE_Tutorials could always use more documentation, whether as part of the
-official RISE_Tutorials docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+### 📝 Improve Documentation
 
-## Submit Feedback
+Whether it’s improving in-line comments, writing a tutorial, or sharing a helpful blog post that references this project — it’s all valuable.
 
-The best way to send feedback is to file an issue on GitHub.
+### 💬 Submit Feedback
 
-If you are proposing a feature:
+File an issue to:
+- Suggest new topics or tools
+- Share what worked (or didn’t) in a tutorial
+- Ask questions or start a discussion
 
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+📣 You can also [fill out our contribution form](https://docs.google.com/forms/d/e/1FAIpQLSc7dT94w_EPQ1ISN9NFEbbDkE1OcmYVuDRGkDSQ41P2i0lk0g/viewform) to stay in the loop!
 
-## Get Started
+---
 
-Ready to contribute? Here's how to set up `RISE_Tutorials` for local development.
+## 🧪 Getting Started with Local Development
 
-1. Fork the repo on GitHub.
-2. Clone your fork locally.
-3. Install your local copy into a virtualenv, e.g., using `conda`.
-4. Create a branch for local development and make changes locally.
-5. Commit your changes and push your branch to GitHub.
-6. Submit a pull request through the GitHub website.
+Here’s how to set up the project locally to make your contributions:
 
-## Code of Conduct
+```bash
+# 1. Fork the repository on GitHub and clone it
+git clone https://github.com/YOUR_USERNAME/rise_tutorials.git
+cd rise_tutorials
 
-Please note that the RISE_Tutorials project is released with a [Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
+# 2. Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Make your changes in a new branch
+git checkout -b your-feature-branch
+
+# 5. Commit and push your changes
+git add .
+git commit -m "Describe your change"
+git push origin your-feature-branch
+
+# 6. Open a Pull Request via GitHub!
+```
+
+We’ll review your PR, offer suggestions if needed, and celebrate your contribution once it’s merged! 🎉
