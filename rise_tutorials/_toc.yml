@@ -6,8 +6,8 @@ root: intro
 parts:
   - caption: Beginner stage 🔰
     chapters:
-    - file: Beginner_tuto/intro.md
     - file: Beginner_tuto/tutorial-rise-classification.ipynb
+    - file: Retina_classification_using_CNN.ipynb 
     # - file: git_tutorial
       # sections:
       # - file: markdown-notebooks
