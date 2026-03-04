@@ -23,7 +23,7 @@ project:
   binder: https://mybinder.org
   toc:
     - file: intro.md
-    - file: videos.md
+    #- file: videos.md
     - file: tuto/tutorial-rise-classification.ipynb
     - file: tuto/Retina_classification_using_CNN_.ipynb
     - file: tuto/tutorial-torchmil.ipynb
