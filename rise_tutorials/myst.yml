@@ -29,9 +29,9 @@ project:
     - file: tuto/tutorial-torchmil.ipynb
 
 site:
-  url: https://tutorial.rise-miccai.org
   template: book-theme
   options:
+    url: https://tutorial.rise-miccai.org
     favicon: logo-rise.png
     logo: logo-rise.png
     logo_text: RISE Tutorials
