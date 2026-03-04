@@ -59,7 +59,9 @@ jobs:
 
       # ── Build the book ──────────────────────────────────────────────────
       - name: Build Jupyter Book
-        run: jupyter book build rise_tutorials/
+        run: |
+          cd rise_tutorials
+          jupyter book build .
 
       # ── Verify output ───────────────────────────────────────────────────
       - name: Verify HTML output
@@ -67,7 +69,9 @@ jobs:
           echo "=== _build contents ==="
           ls -la rise_tutorials/_build/ || echo "No _build directory!"
           echo "=== HTML contents ==="
-          ls -la rise_tutorials/_build/html/ || echo "No HTML output!"
+          ls -la rise_tutorials/_build/html/ || echo "No _build/html!"
+          echo "=== Site contents ==="
+          ls -la rise_tutorials/_build/site/ || echo "No _build/site!"
 
       # ── Upload artifact for deploy job ──────────────────────────────────
       - name: Upload Pages artifact
