@@ -1,0 +1,50 @@
+﻿# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+
+project:
+  id: 9ffd786c-e60e-4d7b-a61d-545039695ab6
+  title: RISE Tutorials
+  description: >
+    Open-source, community-driven AI tutorials for medical imaging,
+    by and for the RISE-MICCAI initiative. From CNNs to foundation models.
+  keywords:
+    - medical imaging
+    - deep learning
+    - MICCAI
+    - AI tutorials
+    - retina classification
+    - multiple instance learning
+  authors:
+    - name: RISE-MICCAI Community
+      url: https://github.com/RISE-MICCAI
+  github: https://github.com/RISE-MICCAI/rise-tutorials-website
+  license: CC-BY-4.0
+  open_access: true
+  binder:
+    url: https://mybinder.org
+    repo: RISE-MICCAI/rise-tutorials-website
+    ref: HEAD
+  toc:
+    - file: intro.md
+    - file: videos.md
+    - file: tuto/tutorial-rise-classification.ipynb
+    - file: tuto/Retina_classification_using_CNN_.ipynb
+    - file: tuto/tutorial-torchmil.ipynb
+
+site:
+  template: book-theme
+  options:
+    favicon: logo-rise.png
+    logo: logo-rise.png
+    logo_text: RISE Tutorials
+    style: _static/custom.css
+    nav:
+      - title: Tutorials
+        url: /intro
+      - title: Videos
+        url: /videos
+      - title: GitHub
+        url: https://github.com/RISE-MICCAI/rise-tutorials-website
+      - title: Contribute
+        url: https://github.com/RISE-MICCAI/rise-tutorials-website/blob/main/CONTRIBUTING.md
+    banner: "RISE-MICCAI promotes inclusive AI research in medical imaging. <a href='https://github.com/RISE-MICCAI/rise-tutorials-website' target='_blank'>Contribute on GitHub</a>"

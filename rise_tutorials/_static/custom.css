@@ -1,0 +1,382 @@
+/* ============================================================
+   RISE-MICCAI Tutorials — Custom Stylesheet
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Root Design Tokens ───────────────────────────────────── */
+:root {
+  --rise-purple: #6c3fc5;
+  --rise-purple-light: #9b6fe0;
+  --rise-purple-dark: #4a2a8a;
+  --rise-teal: #1ab3a4;
+  --rise-teal-light: #4dd0c3;
+  --rise-gold: #f5a623;
+  --rise-bg: #0f0f1a;
+  --rise-surface: #1a1a2e;
+  --rise-surface-2: #232340;
+  --rise-border: rgba(108, 63, 197, 0.25);
+  --rise-text: #e8e8f0;
+  --rise-text-muted: #9090b0;
+  --rise-radius: 14px;
+  --rise-shadow: 0 4px 24px rgba(108, 63, 197, 0.15);
+  --rise-shadow-hover: 0 8px 40px rgba(108, 63, 197, 0.3);
+}
+
+/* ── Global body & fonts ──────────────────────────────────── */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LAYOUT — myst-theme book-theme uses a CSS Grid controlled by
+   CSS custom properties. Override them here on :root.
+   Source: github.com/jupyter-book/myst-theme/packages/styles
+   ══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Article content column ─────────────────────────────── */
+  /* Default is 768px — we widen it significantly              */
+  --article-max-width: 1080px;
+
+  /* ── Left TOC sidebar ───────────────────────────────────── */
+  /* Default is 268px — keep or slightly narrow                */
+  --toc-width: 240px;
+
+  /* ── Right outline sidebar ──────────────────────────────── */
+  /* Default is 220px — keep                                   */
+  --outline-width: 200px;
+
+  /* ── Gutters between sidebars and article ───────────────── */
+  --article-gutter-left: 28px;
+  --article-gutter-right: 28px;
+  --page-gutter-left: 8px;
+  --page-gutter-right: 8px;
+}
+
+/* On very wide screens give even more room */
+@media (min-width: 1600px) {
+  :root {
+    --article-max-width: 1300px;
+  }
+}
+
+/* On medium screens drop the right outline so article gets more space */
+@media (max-width: 1300px) {
+  :root {
+    --outline-width: 0px;
+    --article-gutter-right: 12px;
+  }
+}
+
+/* On small screens drop the left TOC width too */
+@media (max-width: 900px) {
+  :root {
+    --toc-width: 0px;
+    --article-gutter-left: 12px;
+    --article-max-width: 100%;
+  }
+}
+
+/* ── Sidebar ──────────────────────────────────────────────── */
+.bd-sidebar-primary,
+nav.toc {
+  background: linear-gradient(180deg, #12122a 0%, #0f0f1e 100%) !important;
+  border-right: 1px solid var(--rise-border) !important;
+}
+
+.bd-sidebar-primary .navbar-brand img,
+nav.toc .logo img {
+  filter: drop-shadow(0 0 12px rgba(108, 63, 197, 0.5));
+  transition: filter 0.3s ease;
+}
+
+.bd-sidebar-primary .navbar-brand img:hover,
+nav.toc .logo img:hover {
+  filter: drop-shadow(0 0 20px rgba(155, 111, 224, 0.8));
+}
+
+/* ── Left nav links (MyST toc + Sphinx bd-) ──────────────── */
+.bd-sidebar-primary .nav-link,
+nav.toc a {
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--rise-text-muted) !important;
+  transition: all 0.2s ease;
+  padding: 6px 10px !important;
+  margin: 1px 0;
+  text-decoration: none !important;
+}
+
+.bd-sidebar-primary .nav-link:hover,
+.bd-sidebar-primary .nav-link.active,
+nav.toc a:hover,
+nav.toc a[data-active] {
+  background: rgba(108, 63, 197, 0.18) !important;
+  color: var(--rise-purple-light) !important;
+}
+
+.bd-sidebar-primary .nav-link.active,
+nav.toc a[data-active] {
+  border-left: 3px solid var(--rise-purple);
+}
+
+/* ── Top navbar ───────────────────────────────────────────── */
+.navbar {
+  background: linear-gradient(90deg, #12122a 0%, #1a1040 100%) !important;
+  border-bottom: 1px solid var(--rise-border) !important;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ── Page heading ─────────────────────────────────────────── */
+.bd-article-container h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--rise-purple-light) 0%, var(--rise-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.bd-article-container h2 {
+  font-weight: 600;
+  color: var(--rise-purple-light);
+  border-bottom: 2px solid var(--rise-border);
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+}
+
+.bd-article-container h3 {
+  font-weight: 600;
+  color: var(--rise-teal-light);
+}
+
+/* ── Card grid (for tutorials) ────────────────────────────── */
+.sd-card {
+  background: var(--rise-surface) !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: var(--rise-radius) !important;
+  box-shadow: var(--rise-shadow) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  overflow: hidden;
+}
+
+.sd-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--rise-shadow-hover) !important;
+}
+
+.sd-card-header {
+  background: linear-gradient(90deg, var(--rise-purple-dark) 0%, var(--rise-surface-2) 100%) !important;
+  border-bottom: 1px solid var(--rise-border) !important;
+  padding: 14px 18px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+}
+
+.sd-card-body {
+  padding: 16px 18px !important;
+  font-size: 0.88rem !important;
+  line-height: 1.65 !important;
+}
+
+.sd-card-footer {
+  background: rgba(108, 63, 197, 0.08) !important;
+  border-top: 1px solid var(--rise-border) !important;
+  padding: 10px 18px !important;
+}
+
+/* ── Badges in cards ──────────────────────────────────────── */
+.sd-badge {
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 20px !important;
+  padding: 3px 10px !important;
+}
+
+/* ── Admonitions ──────────────────────────────────────────── */
+.admonition {
+  border-radius: 12px !important;
+  border-left-width: 4px !important;
+  margin: 1.5rem 0 !important;
+}
+
+.admonition.note {
+  border-left-color: var(--rise-purple) !important;
+  background: rgba(108, 63, 197, 0.08) !important;
+}
+
+.admonition.tip {
+  border-left-color: var(--rise-teal) !important;
+  background: rgba(26, 179, 164, 0.08) !important;
+}
+
+.admonition.warning {
+  border-left-color: var(--rise-gold) !important;
+  background: rgba(245, 166, 35, 0.08) !important;
+}
+
+/* ── Code blocks ──────────────────────────────────────────── */
+pre, code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  font-size: 0.85em !important;
+}
+
+.highlight pre {
+  border-radius: 10px !important;
+  padding: 16px 20px !important;
+  border: 1px solid var(--rise-border) !important;
+}
+
+/* ── Launch buttons (Colab / Binder) ─────────────────────── */
+.launch-buttons a.btn {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  padding: 6px 14px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid var(--rise-border) !important;
+}
+
+.launch-buttons a[href*="colab"] {
+  background: rgba(245, 166, 35, 0.12) !important;
+  color: var(--rise-gold) !important;
+  border-color: rgba(245, 166, 35, 0.3) !important;
+}
+
+.launch-buttons a[href*="colab"]:hover {
+  background: rgba(245, 166, 35, 0.25) !important;
+}
+
+.launch-buttons a[href*="mybinder"] {
+  background: rgba(26, 179, 164, 0.12) !important;
+  color: var(--rise-teal) !important;
+  border-color: rgba(26, 179, 164, 0.3) !important;
+}
+
+.launch-buttons a[href*="mybinder"]:hover {
+  background: rgba(26, 179, 164, 0.25) !important;
+}
+
+/* ── Announcement banner ──────────────────────────────────── */
+.bd-header-announcement {
+  background: linear-gradient(90deg, var(--rise-purple-dark) 0%, #1a2060 100%) !important;
+  font-size: 0.85rem !important;
+  padding: 8px 20px !important;
+  border-bottom: 1px solid var(--rise-border) !important;
+}
+
+.bd-header-announcement a {
+  color: var(--rise-teal-light) !important;
+  font-weight: 600 !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rise-border) !important;
+  font-size: 0.8rem !important;
+  color: var(--rise-text-muted) !important;
+}
+/* ── Launch badge row (Colab / Binder / GitHub) ───────────── */
+/* The first paragraph of each notebook page often contains the badges */
+.bd-article-container p:first-of-type img[alt*="Colab"],
+.bd-article-container p:first-of-type img[alt*="Binder"],
+.bd-article-container p:first-of-type img[alt*="GitHub"] {
+  height: 24px !important;
+  vertical-align: middle !important;
+  margin: 2px 4px 2px 0 !important;
+  border-radius: 4px !important;
+  transition: opacity 0.2s ease, transform 0.2s ease !important;
+}
+
+.bd-article-container p:first-of-type a:hover img {
+  opacity: 0.85 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Badge container row */
+.bd-article-container p:first-of-type {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  align-items: center !important;
+  margin-bottom: 1.5rem !important;
+  padding: 12px 16px !important;
+  background: rgba(108, 63, 197, 0.06) !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: 10px !important;
+}
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(108, 63, 197, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--rise-purple); }
+
+/* ── Table styling ────────────────────────────────────────── */
+table.table {
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+table.table thead th {
+  background: var(--rise-surface-2) !important;
+  color: var(--rise-purple-light) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 12px 16px !important;
+  border-bottom: 2px solid var(--rise-border) !important;
+}
+
+table.table tbody tr:nth-child(odd) td {
+  background: rgba(108, 63, 197, 0.04) !important;
+}
+
+table.table tbody td {
+  padding: 10px 16px !important;
+  border-bottom: 1px solid var(--rise-border) !important;
+  font-size: 0.88rem !important;
+}
+
+/* ── Video embeds ─────────────────────────────────────────── */
+/* Responsive 16:9 YouTube wrapper                            */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--rise-border);
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Video card hover lift */
+.rise-video-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.rise-video-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 40px rgba(108, 63, 197, 0.28) !important;
+}

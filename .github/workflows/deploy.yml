@@ -1,57 +1,93 @@
 name: deploy-book
 
+# ── Triggers ────────────────────────────────────────────────────────────────
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
+    branches: [main]        # build-only on PRs (no deploy)
+  workflow_dispatch:         # allow manual runs from the Actions tab
 
-env:
-  BASE_URL: /${{ github.event.repository.name }}
+# ── Permissions (required by actions/deploy-pages) ──────────────────────────
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
+# ── Prevent concurrent deploys ───────────────────────────────────────────────
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
+# ─────────────────────────────────────────────────────────────────────────────
 jobs:
-  deploy-book:
+
+  # ── 1. BUILD ────────────────────────────────────────────────────────────────
+  build:
+    name: Build Jupyter Book
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+
     steps:
-      - uses: actions/checkout@v3
+      # ── Checkout ────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # ── Python ──────────────────────────────────────────────────────────────
       - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: "3.11"
+          cache: pip
 
-      - name: Install dependencies
+      # ── Node.js (required by JBook v2 / MyST themes) ─────────────────────
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # ── Install Python deps ──────────────────────────────────────────────
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      # ── Verify versions ─────────────────────────────────────────────────
+      - name: Show tool versions
         run: |
-          pip install -r requirements.txt
-          pip install jupyter-book
+          python --version
+          jupyter-book --version || jupyter book --version
+          node --version
+          npm --version
 
-      - name: Check Jupyter Book version
-        run: jupyter-book --version
+      # ── Build the book ──────────────────────────────────────────────────
+      - name: Build Jupyter Book
+        run: jupyter book build rise_tutorials/
 
-      - name: Build the book
-        run: jupyter-book build rise_tutorials
+      # ── Verify output ───────────────────────────────────────────────────
+      - name: Verify HTML output
+        run: |
+          echo "=== _build contents ==="
+          ls -la rise_tutorials/_build/ || echo "No _build directory!"
+          echo "=== HTML contents ==="
+          ls -la rise_tutorials/_build/html/ || echo "No HTML output!"
 
-      - name: Debug - Check if HTML build exists
-        run: ls -la rise_tutorials/_build/html || echo "HTML build directory missing!"
-
-      - name: Upload artifact
+      # ── Upload artifact for deploy job ──────────────────────────────────
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          name: "github-pages"
-          path: "rise_tutorials/_build/html"
+          path: rise_tutorials/_build/html
 
-      - name: Debug - List uploaded artifacts
-        run: ls -la ${{ runner.temp }}/pages-artifact/ || echo "No artifacts uploaded!"
+  # ── 2. DEPLOY (main branch only) ────────────────────────────────────────────
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: "github-pages"
 

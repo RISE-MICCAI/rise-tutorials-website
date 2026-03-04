@@ -3,20 +3,8 @@
 
 format: jb-book
 root: intro
-parts:
-  - caption: Beginner stage 🔰
-    chapters:
-    - file: Beginner_tuto/intro.md
-    - file: Beginner_tuto/tutorial-rise-classification.ipynb
-    - file: Beginner_tuto/Retina_classification_using_CNN_.ipynb
-    - file: Beginner_tuto/tutorial-torchmil.ipynb
-    # - file: git_tutorial
-      # sections:
-      # - file: markdown-notebooks
-  - caption : Intermidiate stage 🔰🔰
-    chapters:
-    - file: Intermidiate_tuto/intro.md
-    # - file: notebooks
-  - caption : Advance stage 🔰🔰🔰
-    chapters:
-    - file: Advances_tuto/intro.md
+chapters:
+  - file: videos
+  - file: tuto/tutorial-rise-classification.ipynb
+  - file: tuto/Retina_classification_using_CNN_.ipynb
+  - file: tuto/tutorial-torchmil.ipynb

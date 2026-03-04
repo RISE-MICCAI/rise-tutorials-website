@@ -1,4 +1,7 @@
-jupyter-book<2.0.0
+# ── Jupyter Book v2 (MyST-MD engine) ──────────────────────
+jupyter-book>=2.0.0
+ghp-import
+
+# ── Book content dependencies ──────────────────────────────
 matplotlib
 numpy
-ghp-import
