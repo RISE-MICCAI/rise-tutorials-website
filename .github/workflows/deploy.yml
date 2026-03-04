@@ -53,7 +53,7 @@ jobs:
           BASE_URL: /${{ github.event.repository.name }}
         run: |
           cd rise_tutorials
-          myst build --execute --html
+          myst build --html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
