@@ -49,9 +49,8 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build HTML
-        env:
-          BASE_URL: /${{ github.event.repository.name }}
         run: |
+          export BASE_URL="/rise-tutorials-website"
           cd rise_tutorials
           myst build --html
 
