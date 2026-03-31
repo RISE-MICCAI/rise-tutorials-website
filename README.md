@@ -3,11 +3,11 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/YouvenZ/rise_tutorials/deploy.yml?branch=main&label=build)](https://github.com/YouvenZ/rise_tutorials/actions)
 [![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Contributors](https://img.shields.io/github/contributors/YouvenZ/rise_tutorials)](https://github.com/YouvenZ/rise_tutorials/graphs/contributors)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Frise-miccai.github.io%2Frise-tutorials-website%2Fintro.html)](https://rise-miccai.github.io/rise-tutorials-website/intro.html)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Ftutorial.rise-miccai.org%2F)](https://tutorial.rise-miccai.org/)
 
-**RISE Tutorials** is a collaborative, open-source educational platform developed by the [RISE-MICCAI](https://rise-miccai.github.io/rise-tutorials-website/intro.html) initiative. Our mission is to **democratize access to high-quality tutorials** in medical image analysis and AI.
+**RISE Tutorials** is a collaborative, open-source educational platform developed by the [RISE-MICCAI](https://tutorial.rise-miccai.org/) initiative. Our mission is to **democratize access to high-quality tutorials** in medical image analysis and AI.
 
-Explore the live book 👉 [**RISE Tutorials Website**](https://rise-miccai.github.io/rise-tutorials-website/intro.html)
+Explore the live book 👉 [**RISE Tutorials Website**](https://tutorial.rise-miccai.org/)
 
 ---
 
@@ -142,7 +142,7 @@ If you use RISE Tutorials in your research or teaching, please cite us:
   author       = {MICCAI-RISE Community},
   title        = {RISE Tutorials: Open Educational Resources for Medical Imaging AI},
   year         = {2025},
-  howpublished = {\url{https://rise-miccai.github.io/rise-tutorials-website/}},
+  howpublished = {\url{https://tutorial.rise-miccai.org/}},
   note         = {Version 1.0}
 }
 ```
