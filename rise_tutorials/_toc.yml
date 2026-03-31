@@ -8,3 +8,4 @@ chapters:
   - file: tuto/tutorial-rise-classification.ipynb
   - file: tuto/Retina_classification_using_CNN_.ipynb
   - file: tuto/tutorial-torchmil.ipynb
+  - file: tuto/multi_modal_xai_tutorial.ipynb
