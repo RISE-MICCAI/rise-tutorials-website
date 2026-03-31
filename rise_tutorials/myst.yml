@@ -21,6 +21,35 @@ project:
   license: CC-BY-4.0
   open_access: true
   binder: https://mybinder.org
+  # Jupyter Book 2.0 Enhanced Features
+  settings:
+    # Enable interactive widgets and outputs
+    widgets: true
+    # Enable Thebe for live code execution
+    thebe: true
+    # Enhanced cross-referencing
+    crossref:
+      resolve: true
+      prefix: tutorial
+    # Enable MyST Markdown extensions
+    myst:
+      extensions:
+        - colon_fence
+        - deflist
+        - dollarmath
+        - amsmath
+        - linkify
+        - substitution
+        - tasklist
+        - attrs_inline
+      # Enable admonitions and callouts
+      enable_extensions:
+        - html_admonition
+        - html_image
+    # Enhanced syntax highlighting
+    syntax_highlighting:
+      language: python
+      theme: github-dark
   toc:
     - file: intro.md
     #- file: videos.md
@@ -31,12 +60,23 @@ project:
 
 site:
   template: book-theme
+  # Jupyter Book 2.0 Theme Enhancements
   options:
     url: https://tutorial.rise-miccai.org
     favicon: logo-rise.png
     logo: logo-rise.png
     logo_text: RISE Tutorials
     style: _static/custom.css
+    # Enhanced theming options
+    hide_toc: false
+    show_prev_next: true
+    use_repository_button: true
+    use_issues_button: true
+    use_edit_page_button: true
+    repository_url: https://github.com/RISE-MICCAI/rise-tutorials-website
+    repository_branch: main
+    path_to_docs: rise_tutorials
+    # Enhanced navigation
     nav:
       - title: Tutorials
         url: /intro
@@ -46,3 +86,9 @@ site:
         url: https://github.com/RISE-MICCAI/rise-tutorials-website
       - title: Contribute
         url: https://github.com/RISE-MICCAI/rise-tutorials-website/blob/main/CONTRIBUTING.md
+    # Interactive features
+    launch_buttons:
+      notebook_interface: jupyterlab
+      binderhub_url: https://mybinder.org
+      thebe: true
+      colab_url: https://colab.research.google.com

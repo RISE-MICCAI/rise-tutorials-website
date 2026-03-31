@@ -1,11 +1,29 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
+# Enhanced with Jupyter Book 2.0 structure
 
 format: jb-book
 root: intro
+options:
+  numbered: true
+  titlesonly: false
+
 chapters:
   - file: videos
-  - file: tuto/tutorial-rise-classification.ipynb
-  - file: tuto/Retina_classification_using_CNN_.ipynb
-  - file: tuto/tutorial-torchmil.ipynb
-  - file: tuto/multi_modal_xai_tutorial.ipynb
+    title: Video Tutorials
+  
+  # Tutorial Section - Enhanced structure
+  - caption: Medical Imaging Tutorials
+    chapters:
+      - file: tuto/tutorial-rise-classification.ipynb
+        title: RISE Classification Tutorial
+      - file: tuto/Retina_classification_using_CNN_.ipynb
+        title: Retina Classification with CNNs
+  
+  # Advanced Topics Section
+  - caption: Advanced Topics
+    chapters:
+      - file: tuto/tutorial-torchmil.ipynb
+        title: Multiple Instance Learning with TorchMIL
+      - file: tuto/multi_modal_xai_tutorial.ipynb
+        title: Multi-Modal XAI Tutorial

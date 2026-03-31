@@ -380,3 +380,312 @@ table.table tbody td {
   transform: translateY(-3px) !important;
   box-shadow: 0 10px 40px rgba(108, 63, 197, 0.28) !important;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   JUPYTER BOOK 2.0 ENHANCEMENTS
+   Additional styling for interactive features and modern UX
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Interactive Widgets ──────────────────────────────────── */
+.jupyter-widgets-output-area,
+.widget-inline-hbox,
+.widget-inline-vbox {
+  background: var(--rise-surface) !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  border: 1px solid var(--rise-border) !important;
+  margin: 1rem 0 !important;
+}
+
+.widget-label {
+  color: var(--rise-purple-light) !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+}
+
+.widget-slider,
+.widget-button {
+  transition: all 0.2s ease !important;
+}
+
+.widget-button {
+  background: var(--rise-purple) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 8px 16px !important;
+  cursor: pointer !important;
+}
+
+.widget-button:hover {
+  background: var(--rise-purple-light) !important;
+  box-shadow: 0 4px 12px rgba(108, 63, 197, 0.4) !important;
+}
+
+/* ── Thebe Live Code Integration ──────────────────────────── */
+.thebelab-cell {
+  background: var(--rise-surface) !important;
+  border-radius: 10px !important;
+  padding: 16px !important;
+  border: 2px solid var(--rise-purple) !important;
+  margin: 1.5rem 0 !important;
+  box-shadow: var(--rise-shadow) !important;
+}
+
+.thebelab-button {
+  background: var(--rise-teal) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.thebelab-button:hover {
+  background: var(--rise-teal-light) !important;
+  box-shadow: 0 4px 12px rgba(26, 179, 164, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── Cross-Reference Links ────────────────────────────────── */
+a.reference.internal {
+  color: var(--rise-teal-light) !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+a.reference.internal:hover {
+  color: var(--rise-purple-light) !important;
+  border-bottom-color: var(--rise-purple-light) !important;
+}
+
+/* Cross-reference in code */
+code a.reference.internal {
+  background: rgba(108, 63, 197, 0.15) !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+}
+
+/* ── Enhanced Admonitions ─────────────────────────────────── */
+.admonition-title {
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.admonition-title::before {
+  content: "💡";
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+.admonition.tip .admonition-title::before {
+  content: "✨";
+}
+
+.admonition.warning .admonition-title::before {
+  content: "⚠️";
+}
+
+.admonition.danger .admonition-title::before {
+  content: "🚨";
+}
+
+.admonition.important .admonition-title::before {
+  content: "⭐";
+}
+
+/* ── Code Cell Outputs ────────────────────────────────────── */
+.cell_output {
+  background: var(--rise-surface) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  border-left: 3px solid var(--rise-teal) !important;
+  margin-top: 8px !important;
+  overflow-x: auto !important;
+}
+
+.cell_output pre {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Jupyter notebook cell structure */
+.jp-Cell {
+  margin-bottom: 1.5rem !important;
+}
+
+.jp-InputArea,
+.jp-OutputArea {
+  border-radius: 10px !important;
+}
+
+/* ── Navigation Buttons (Prev/Next) ───────────────────────── */
+.prev-next-area {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-top: 3rem !important;
+  padding-top: 2rem !important;
+  border-top: 2px solid var(--rise-border) !important;
+  gap: 16px !important;
+}
+
+.prev-next-area a {
+  flex: 1 !important;
+  padding: 16px 24px !important;
+  background: var(--rise-surface) !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: 12px !important;
+  text-decoration: none !important;
+  color: var(--rise-text) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.prev-next-area a:hover {
+  background: var(--rise-surface-2) !important;
+  border-color: var(--rise-purple) !important;
+  box-shadow: var(--rise-shadow) !important;
+  transform: translateY(-2px) !important;
+}
+
+.prev-next-area a.left::before {
+  content: "← ";
+  margin-right: 8px;
+  color: var(--rise-purple-light);
+}
+
+.prev-next-area a.right::after {
+  content: " →";
+  margin-left: 8px;
+  color: var(--rise-purple-light);
+}
+
+/* ── Table of Contents Sections ───────────────────────────── */
+.toctree-l1 > a {
+  font-weight: 600 !important;
+  color: var(--rise-purple-light) !important;
+  font-size: 0.95rem !important;
+  margin-top: 12px !important;
+}
+
+.toctree-l2 > a {
+  padding-left: 20px !important;
+  font-size: 0.85rem !important;
+}
+
+.toctree-l3 > a {
+  padding-left: 36px !important;
+  font-size: 0.82rem !important;
+}
+
+/* ── Search Functionality ─────────────────────────────────── */
+.search-input {
+  background: var(--rise-surface) !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: 8px !important;
+  color: var(--rise-text) !important;
+  padding: 10px 16px !important;
+  transition: all 0.2s ease !important;
+}
+
+.search-input:focus {
+  border-color: var(--rise-purple) !important;
+  box-shadow: 0 0 0 3px rgba(108, 63, 197, 0.2) !important;
+  outline: none !important;
+}
+
+/* ── Repository Buttons ───────────────────────────────────── */
+.repository-button,
+.edit-button,
+.issues-button {
+  background: var(--rise-surface) !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: 8px !important;
+  padding: 6px 12px !important;
+  color: var(--rise-text) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.repository-button:hover,
+.edit-button:hover,
+.issues-button:hover {
+  background: var(--rise-purple) !important;
+  border-color: var(--rise-purple-light) !important;
+  color: white !important;
+  box-shadow: var(--rise-shadow) !important;
+}
+
+/* ── Loading Indicators ───────────────────────────────────── */
+.loading-indicator {
+  border: 3px solid var(--rise-surface-2);
+  border-top: 3px solid var(--rise-purple);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ── Accessibility Enhancements ───────────────────────────── */
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--rise-purple);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Focus indicators */
+a:focus,
+button:focus,
+input:focus {
+  outline: 2px solid var(--rise-purple-light) !important;
+  outline-offset: 2px !important;
+}
+
+/* ── Print Styles ─────────────────────────────────────────── */
+@media print {
+  .bd-sidebar-primary,
+  .bd-sidebar-secondary,
+  .navbar,
+  footer,
+  .prev-next-area {
+    display: none !important;
+  }
+  
+  :root {
+    --article-max-width: 100% !important;
+  }
+}
+

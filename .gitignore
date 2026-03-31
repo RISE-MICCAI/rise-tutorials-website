@@ -89,3 +89,7 @@ dmypy.json
 
 # Node modules (if using any JS tools)
 node_modules/
+
+# Project documentation
+AUDIT_NOTE.md
+AUDIT_NOTES.md
