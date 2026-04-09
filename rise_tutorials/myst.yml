@@ -57,6 +57,7 @@ project:
     - file: tuto/Retina_classification_using_CNN_.ipynb
     - file: tuto/tutorial-torchmil.ipynb
     - file: tuto/multi_modal_xai_tutorial.ipynb
+    - file: tuto/BraTS19_Segmentation_Tutorial.ipynb
 
 site:
   template: book-theme
